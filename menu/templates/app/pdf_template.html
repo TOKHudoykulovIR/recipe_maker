@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>PDF</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        td {
+            font-family: 'Courier New', monospace;
+        }
+        @page {
+            size: a4 portrait;
+            @frame content_frame {          /* Content Frame */
+                left: 100pt;  width: 512pt;  top: 80pt;  height: 632pt;
+            }
+        }
+    </style>
+</head>
+
+<body>
+{#    <!-- Content for Static Frame 'header_frame' -->#}
+{#    <div id="header_content">#}
+{#    	<h3>response</h3>#}
+{#    </div>#}
+{##}
+{#    <!-- Content for Static Frame 'footer_frame' -->#}
+{#    <div id="footer_content">(c) - page <pdf:pagenumber>#}
+{#        of <pdf:pagecount>#}
+{#    </div>#}
+
+
+
+<!-- HTML Content -->
+
+<table width="50%" align="left">
+    <tr>
+        <td style="border: 1px solid #555; border-bottom: white" width="70%">.</td>
+        <td width="50%"></td>
+    </tr>
+    <tr>
+        <td style="font-size: 1.7em; border: 1px solid #555; border-top: white" width="70%" align="center">Recipe Name</td>
+        <td style="font-size: 1.5em;" width="40%" align="center"><b>{{ recipe.name }}</b></td>
+    </tr>
+</table>
+
+<br>
+
+<table width="50%" align="left">
+    <tr>
+        <td style="border: 1px solid #555; border-bottom: white" width="70%">.</td>
+        <td width="50%"></td>
+    </tr>
+    <tr>
+        <td style="font-family: 'Courier New', monospace; font-size: 1.7em; border: 1px solid #555; border-top: white" width="70%" align="center">Section</td>
+        <td style="font-family: 'Courier New', monospace; font-size: 1.5em;" width="40%" align="center"><b>{{ recipe.section }}</b></td>
+    </tr>
+</table>
+
+
+<br><br><br>
+<table width="80%" align="left">
+    <tr>
+        <td style="border: 1px solid #555; border-bottom: white" width="20%">.</td>
+        <td style="border: 1px solid #555; border-bottom: white" width="80%">.</td>
+    </tr>
+    <tr>
+        <td style="font-size: 1.8em; border: 1px solid #555; border-top: white" width="20%" align="center">Units</td>
+        <td style="font-size: 1.8em; border: 1px solid #555; border-top: white" width="80%" align="center">Ingredients</td>
+    </tr>
+
+
+    {% for ingredient in ingredients %}
+        <tr>
+            <td style="border-right: 1px solid #555; border-left: 1px solid #555;" width="20%">.</td>
+            <td style="border-right: 1px solid #555;" width="80%">.</td>
+        </tr>
+        <tr>
+            <td style="font-size: 1.6em; border-right: 1px solid #555; border-left: 1px solid #555;" width="20%" height="32" align="center"><b>{{ ingredient.unit }}</b></td>
+            <td style="font-size: 1.6em; border-right: 1px solid #555;" width="80%" height="32" align="center"><b>{{ ingredient.ingredient }}</b></td>
+        </tr>
+    {% endfor %}
+    <tr>
+        <td style="border: 1px solid #555; border-top: white" width="20%" height="32" align="center"><br></td>
+        <td style="border: 1px solid #555; border-top: white" width="80%" height="32" align="center"><br></td>
+    </tr>
+</table>
+
+<br><br><br>
+
+<table width="80%" align="left">
+    <tr>
+        <td style="border: 1px solid #555; border-bottom: white" width="20%">.</td>
+    </tr>
+    <tr>
+        <td style="font-size: 1.8em; border: 1px solid #555; border-top: white" width="100%" align="center">Method</td>
+    </tr>
+    <tr>
+        <td style="font-size: 1.6em; border: 1px solid #555;" width="100%" align="center"><br><i>{{ recipe.method }}</i><br></td>
+    </tr>
+</table>
+
+
+</body>
+</html>
