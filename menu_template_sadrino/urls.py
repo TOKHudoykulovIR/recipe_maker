@@ -7,3 +7,9 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     # path('menu/', include('menu.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+
+admin.site.site_header = "Administration Panel"
+admin.site.site_url = "https://damp-taiga-59981.herokuapp.com/admin/"
+# admin.site.site_title = ''
+# admin.site.index_title = ""
