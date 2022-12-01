@@ -2,7 +2,7 @@ from django.contrib import admin, messages
 from .models import Recipe, RecipeIngredient
 from . import views
 
-admin.site.register(RecipeIngredient)
+# admin.site.register(RecipeIngredient)
 
 
 class RecipeIngredients(admin.StackedInline):
