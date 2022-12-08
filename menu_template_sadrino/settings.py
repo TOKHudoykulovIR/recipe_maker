@@ -80,8 +80,12 @@ WSGI_APPLICATION = "menu_template_sadrino.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "NAME": "da74h2sfcuq2tb",
+        "USER": "vhigtvyznlirzk",
+        "PASSWORD": "5d41cb82319e26a023eca01aa89d5ba6eeb9a173c7d72178207db0349e219249",
+        "HOST": "ec2-44-209-57-4.compute-1.amazonaws.com",
+        "PORT": "5432",
     }
 }
 
