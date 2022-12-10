@@ -56,6 +56,10 @@ class Blank(models.Model):
     drinks_garnishes = models.CharField(max_length=100, blank=True, null=True)
     drugget_and_tape = models.CharField(max_length=100, blank=True, null=True)
 
+    class Meta:
+        verbose_name = "Event"
+        verbose_name_plural = "Events"
+
 
 # blank metas model
 class BlankMeta(models.Model):
