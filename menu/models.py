@@ -67,7 +67,9 @@ class BlankMeta(models.Model):
     timings = models.TimeField(auto_now=False, auto_now_add=False, blank=True, null=True)
     action = models.CharField(max_length=120, blank=True, null=True)
 
-
+    class Meta:
+        verbose_name = "Event"
+        verbose_name_plural = "Events"
 # furniture_row_header = (("t", "TABLES"), ("tl", "TABLE LINEN"), ("n", "NAPKINS"), ("d", "DISPOSABLE NAPKINS"))
 
 # furniture model
