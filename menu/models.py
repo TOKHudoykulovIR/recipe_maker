@@ -7,8 +7,8 @@ from ckeditor.fields import RichTextField
 class Recipe(models.Model):
     name = models.CharField(max_length=180)
     section = models.CharField(max_length=100)
-    method = models.TextField(blank=True, null=True)
-    date = models.DateTimeField(auto_now_add=True)
+    method = RichTextField(blank=True, null=True)
+    created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
 

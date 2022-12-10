@@ -13,6 +13,7 @@ class RecipeIngredients(admin.StackedInline):
 class RecipeAdmin(admin.ModelAdmin):
     inlines = [RecipeIngredients, ]
     actions = ['convert_menu_to_pdf', ]
+    list_display = ("id", "name", "section", "created", "updated")
 
     @admin.action(description='Convert to pdf')
     def convert_menu_to_pdf(self, request, queryset):
@@ -32,11 +33,6 @@ admin.site.register(Recipe, RecipeAdmin)
 
 
 # ----- BLANK INLINE MODULE -----
-class BlankMetasInline(admin.StackedInline):
-    model = BlankMeta
-    extra = 0
-
-
 # class FurnitureInlineFormset(BaseInlineFormSet):
 #     def __init__(self, *args, **kwargs):
 #         kwargs['initial'] = [
@@ -48,17 +44,22 @@ class BlankMetasInline(admin.StackedInline):
 #         super(FurnitureInlineFormset, self).__init__(*args, **kwargs)
 
 
-class FurnitureInline(admin.StackedInline):
-    readonly_fields = ("equipment", )
-    fields = ("equipment", "quantity", "supplied_by", "location_purpose")
-    model = Furniture
-    extra = 4
-    max_num = 4
-    # formset = FurnitureInlineFormset
+class BlankMetasInline(admin.StackedInline):
+    model = BlankMeta
+    extra = 0
+
+
+# class FurnitureInline(admin.StackedInline):
+#     readonly_fields = ("equipment", )
+#     fields = ("equipment", "quantity", "supplied_by", "location_purpose")
+#     model = Furniture
+#     extra = 4
+#     max_num = 4
+#     # formset = FurnitureInlineFormset
 
 
 class BlankAdmin(admin.ModelAdmin):
-    inlines = [BlankMetasInline, FurnitureInline]
+    inlines = [BlankMetasInline, ]
     actions = ['convert_event_sheet_to_pdf', ]
     fields = (("client", "client_contact", "client_phone", "client_email"),
               ("venue", "venue_contact", "venue_phone", "venue_email"),
@@ -66,6 +67,7 @@ class BlankAdmin(admin.ModelAdmin):
               ("food_leaves", "chefs_leave"), ("porters_leave", "total_waiters"), "dietaries",
               ("food_arrives", "chefs_arrives"), ("porter_arrives", "total_chefs"), "menu",
               ("staff_food", "drinks_garnishes"), "drugget_and_tape")
+    list_display = ("id", "event_manager", "client", "venue", "guest_num")
 
     @admin.action(description='Convert to pdf ')
     def convert_event_sheet_to_pdf(self, request, queryset):
