@@ -68,8 +68,8 @@ class BlankMeta(models.Model):
     action = models.CharField(max_length=120, blank=True, null=True)
 
     class Meta:
-        verbose_name = "Event"
-        verbose_name_plural = "Events"
+        verbose_name = "Action"
+        verbose_name_plural = "Actions"
 # furniture_row_header = (("t", "TABLES"), ("tl", "TABLE LINEN"), ("n", "NAPKINS"), ("d", "DISPOSABLE NAPKINS"))
 
 # furniture model
