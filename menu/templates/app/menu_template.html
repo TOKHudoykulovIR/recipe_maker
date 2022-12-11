@@ -11,7 +11,7 @@
         @page {
             size: a4 portrait;
             @frame content_frame {          /* Content Frame */
-                left: 75pt;  width: 540pt;  top: 40pt;  height: 770pt;
+                left: 78pt;  width: 540pt;  top: 40pt;  height: 790pt;
             }
         }
     </style>
@@ -32,26 +32,26 @@
 
 <!-- HTML Content -->
 
-<table width="65%" align="left">
+<table width="70%" align="left">
     <tr>
-        <td style="border: 1px solid #555; border-bottom: white" width="70%">.</td>
+        <td style="border: 1px solid #555; border-bottom: white" width="60%">.</td>
         <td width="100%"></td>
     </tr>
     <tr>
-        <td style="font-size: 1.5em; border: 1px solid #555; border-top: white" width="70%" align="center">Recipe Name</td>
+        <td style="font-size: 1.5em; border: 1px solid #555; border-top: white" width="60%" align="center">Recipe Name</td>
         <td style="font-size: 1.3em;" width="100%" align="center"><b>{{ recipe.name }}</b></td>
     </tr>
 </table>
 
 <br>
 
-<table width="50%" align="left">
+<table width="70%" align="left">
     <tr>
-        <td style="border: 1px solid #555; border-bottom: white" width="70%">.</td>
-        <td width="50%"></td>
+        <td style="border: 1px solid #555; border-bottom: white" width="60%">.</td>
+        <td width="100%"></td>
     </tr>
     <tr>
-        <td style="font-family: 'Courier New', monospace; font-size: 1.5em; border: 1px solid #555; border-top: white" width="70%" align="center">Section</td>
+        <td style="font-family: 'Courier New', monospace; font-size: 1.5em; border: 1px solid #555; border-top: white" width="60%" align="center">Section</td>
         <td style="font-family: 'Courier New', monospace; font-size: 1.3em;" width="100%" align="center"><b>{{ recipe.section }}</b></td>
     </tr>
 </table>
@@ -64,8 +64,8 @@
         <td style="border: 1px solid #555; border-bottom: white" width="80%">.</td>
     </tr>
     <tr>
-        <td style="font-size: 1.6em; border: 1px solid #555; border-top: white" width="20%" align="center">Units</td>
-        <td style="font-size: 1.6em; border: 1px solid #555; border-top: white" width="80%" align="center">Ingredients</td>
+        <td style="font-size: 1.5em; border: 1px solid #555; border-top: white" width="20%" align="center">Units</td>
+        <td style="font-size: 1.5em; border: 1px solid #555; border-top: white" width="80%" align="center">Ingredients</td>
     </tr>
 
 
@@ -75,8 +75,8 @@
             <td style="border-right: 1px solid #555;" width="80%">.</td>
         </tr>
         <tr>
-            <td style="font-size: 1.4em; border-right: 1px solid #555; border-left: 1px solid #555;" width="20%" height="32" align="center"><b>{{ ingredient.unit }}</b></td>
-            <td style="font-size: 1.4em; border-right: 1px solid #555;" width="80%" height="32" align="center"><b>{{ ingredient.ingredient }}</b></td>
+            <td style="font-size: 1.3em; border-right: 1px solid #555; border-left: 1px solid #555;" width="20%" height="32" align="center"><b>{{ ingredient.unit }}</b></td>
+            <td style="font-size: 1.3em; border-right: 1px solid #555;" width="80%" height="32" align="center"><b>{{ ingredient.ingredient }}</b></td>
         </tr>
     {% endfor %}
     <tr>
@@ -92,10 +92,10 @@
         <td style="border: 1px solid #555; border-bottom: white" width="20%">.</td>
     </tr>
     <tr>
-        <td style="font-size: 1.6em; border: 1px solid #555; border-top: white" width="100%" align="center">Method</td>
+        <td style="font-size: 1.5em; border: 1px solid #555; border-top: white" width="100%" align="center">Method</td>
     </tr>
     <tr>
-        <td style="font-size: 1.4em; border: 1px solid #555;" width="100%" align="center"><br><i>{{ recipe.method|safe }}</i><br></td>
+        <td style="font-size: 1.2em; border: 1px solid #555;" width="100%" align="center"><br><i>{{ recipe.method|safe }}</i><br></td>
     </tr>
 </table>
 
